@@ -1,17 +1,26 @@
 const app = new Vue({
     el:'#app',
     data:{
-        titulo:'GYM con Vue',
+        titulo:'Gestionar Tarea',
         tareas:[],
-        nuevaTarea:''
+        nombreTarea:'',
+        contactoTarea:'',
+        direccionTarea:'',
+        descripcionTarea:''
     },
     methods:{
         agregartarea(){
             this.tareas.push({
-                nombre:this.nuevaTarea,
+                nombre:this.nombreTarea,
+                contacto:this.contactoTarea,
+                direccion:this.direccionTarea,
+                descripcion:this.descripcionTarea,
                 estado:false
             });
-            this.nuevaTarea='';
+            this.nombreTarea='';
+            this.contactoTarea='';
+            this.direccionTarea='';
+            this.descripcionTarea='';
             localStorage.setItem('gym-vue', JSON.stringify(this.tareas));
         },
         editartarea(index){
