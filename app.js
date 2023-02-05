@@ -36,7 +36,7 @@ const app = new Vue({
         let datosBD = JSON.parse(localStorage.getItem('gym-vue'));
         if(datosBD === null){
             this.tareas = [];
-        }else{
+         }else{
             this.tareas = datosBD;
         }
     }
